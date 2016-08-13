@@ -90,18 +90,22 @@ class MicroBlogger
     screen_names.each { |name| direct_message(name, message) }
   end
 
+  public
+
   def everyones_last_tweet
     friends = @client.friends
     friends.each do |friend|
-      # find each friend's last message
-      # print each friend's screen_name
-      # print each friend's last message
+      name = @client.user(friend).screen_name
+      time = @client.user(friend).status.created_at
+      tweet = @client.user(friend).status.text
+      
+      puts "@#{name} last tweet, created at #{time.getgm} :\n#{tweet}"
       puts ''
     end
   end
 end
 
 blogger = MicroBlogger.new
-blogger.run
+blogger.everyones_last_tweet
 
 
