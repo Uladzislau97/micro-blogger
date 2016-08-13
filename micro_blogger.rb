@@ -83,22 +83,21 @@ class MicroBlogger
     screen_names
   end
 
-
   def spam_my_followers(message)
     screen_names = followers_list
 
     screen_names.each { |name| direct_message(name, message) }
   end
 
-  public
-
   def everyones_last_tweet
+    puts ''
+
     friends = @client.friends
     friends.each do |friend|
       name = @client.user(friend).screen_name
       time = @client.user(friend).status.created_at
       tweet = @client.user(friend).status.text
-      
+
       puts "@#{name} last tweet, created at #{time.getgm} :\n#{tweet}"
       puts ''
     end
@@ -106,6 +105,7 @@ class MicroBlogger
 end
 
 blogger = MicroBlogger.new
-blogger.everyones_last_tweet
+blogger.run
+
 
 
