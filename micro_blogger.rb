@@ -23,6 +23,9 @@ class MicroBlogger
         when 't'
           message = input[1..-1].join(' ')
           tweet(message)
+        when 's'
+          message = input[1..-1].join(' ')
+          spam_my_followers(message)
         when 'dm'
           target = input[1]
           message_words = input[2..-1]
