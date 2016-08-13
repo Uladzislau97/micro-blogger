@@ -77,6 +77,7 @@ class MicroBlogger
 
     screen_names
   end
+
 end
 
 blogger = MicroBlogger.new
