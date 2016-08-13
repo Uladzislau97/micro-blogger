@@ -78,6 +78,12 @@ class MicroBlogger
     screen_names
   end
 
+
+  def spam_my_followers(message)
+    screen_names = followers_list
+
+    screen_names.each { |name| direct_message(name, message) }
+  end
 end
 
 blogger = MicroBlogger.new
