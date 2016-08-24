@@ -1,4 +1,5 @@
 require 'jumpstart_auth'
+require 'bitly'
 
 class MicroBlogger
   attr_reader :client
@@ -101,6 +102,10 @@ class MicroBlogger
       puts "@#{name} last tweet, created at #{time.getgm} :\n#{tweet}"
       puts ''
     end
+  end
+
+  def shorten(original_url)
+    puts "Shortening this URL: #{original_url}"
   end
 end
 
