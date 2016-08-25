@@ -10,7 +10,7 @@ Basic commands:
 t _message_
 ''' 
 - tweet a message
-- ```s _message_``` - spam all your followers with the message
+- ```s 'message'``` - spam all your followers with the message
 - ```elt``` - see the last tweets of every account, which you follow
 - **_dm target message_** - send a direct message to the target
 - _q_ - quiet
